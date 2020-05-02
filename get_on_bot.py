@@ -28,11 +28,12 @@ async def on_message(ctx):
     response = random.choice(scoob_quotes)
     await ctx.channel.send(response)
 
+#Text message to jared
 @bot.command(name='jared')
 async def on_message(ctx):
 
     resp = requests.post('https://textbelt.com/text', {
-    'phone': '9732224085',
+    'phone': JARED_PHONE,
     'message': 'ATTENTION GAMER: YOU HAVE BEEN SUMMONED TO YOUR GAMING STATION',
     'key': 'textbelt',
     })
@@ -42,6 +43,6 @@ async def on_message(ctx):
     else:
         await ctx.channel.send('GAMER JARED HAS BEEN SUMMONED')
 
-    
+
 
 bot.run(TOKEN)
