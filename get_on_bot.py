@@ -126,9 +126,10 @@ async def on_message(ctx):
 
 @bot.command(name='luke')
 async def on_message(ctx):
+
     response = sendText('luke')
     if response['success']:
-        await ctx.channel.send('GAMER LUKE HAS BEEN SUMMONED\nMessages left: ' + str(response['quotaRemaining']))
+        await ctx.channel.send('GAMER LUKE HAS BEEN SUMMONED (but he doesn\'t get texts in his basement)\nMessages left: ' + str(response['quotaRemaining']))
     else:
         await ctx.channel.send('It broke, someone tell elias to check the logs')
 @bot.command(name='cokes')
